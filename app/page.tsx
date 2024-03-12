@@ -13,7 +13,7 @@ export default async function Home() {
           Per product widgets
         </h1>
         <hr className="border-[2px] border-solid border-divider w-full mb-[20px]" />
-        <div className="flex flex-col gap-y-[42px] lg:gap-x-[20px] justify-between items-center lg:flex-row">
+        <div className="flex flex-col gap-y-[42px] lg:gap-x-[20px] justify-between items-center lg:items-start lg:flex-row flex-1">
           {data && data.length > 0
             ? data.map((product, i) => (
                 <Widget

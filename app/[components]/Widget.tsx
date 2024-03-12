@@ -24,14 +24,14 @@ export const Widget: React.FC<WidgetProps> = ({
   isActivate,
 }) => {
   return (
-    <div className="sm:min-w-[250px] max-w-[250px] sm:max-w-[400px] w-full h-full">
+    <div className="sm:min-w-[250px] max-w-[250px] sm:max-w-[400px] w-full flex flex-col flex-1">
       <WidgetHeader
         title={title}
         subtitle={subtitle}
         bgColor={bgColor}
         textColor={textColor}
       />
-      <div className="flex flex-col gap-[10px] mt-[13.5px] w-full">
+      <div className="flex flex-col gap-[10px] mt-[13.5px] w-full flex-1">
         <Checkbox defaultStatus={isLinkToProfile} />
         <BadgeList defaultColor={badgeColor} />
         <Toggle defaultStatus={isActivate} />
