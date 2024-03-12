@@ -21,7 +21,7 @@ export const BadgeList: React.FC<BadgeListProps> = ({ defaultColor }) => {
         {Object.values(BadgeColor).map((color) => (
           <div
             key={color}
-            className={`w-[16px] h-[16px] p-0 m-0 ${color} cursor-pointer ${selectedColor === color ? '!border-2 !border-divider !border-solid' : ''} ${color === BadgeColor.WHITE ? 'border-[1px] border-solid border-gray-200' : ''}`}
+            className={`w-[16px] h-[16px] p-0 m-0 hover:opacity-80 ${color} cursor-pointer ${selectedColor === color ? '!border-2 !border-divider !border-solid' : ''} ${color === BadgeColor.WHITE ? 'border-[1px] border-solid border-gray-200' : ''}`}
             onClick={() => setSelectedColor(color)}
             role="option"
             aria-selected={selectedColor === color}

@@ -32,7 +32,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ defaultStatus }) => {
         onClick={() => setLinkToProfile(!isLinkToProfile)}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        className={`absolute right-0 top-2 z-10 w-[18px] h-[18px] flex justify-center items-center border-solid border-[2px] border-black  ${isLinkToProfile ? 'bg-green border-green border-solid border-[2px] text-white' : ''} hover:border-green rounded-sm`}
+        className={`absolute right-0 top-2 z-10 w-[18px] h-[18px] flex justify-center items-center border-solid border-[2px] border-black cursor-pointer  ${isLinkToProfile ? 'bg-green border-green border-solid border-[2px] text-white' : ''} hover:border-green rounded-sm`}
       >
         {isLinkToProfile ? (
           <svg

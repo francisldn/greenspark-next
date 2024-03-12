@@ -18,7 +18,7 @@ export const Toggle: React.FC<ToggleProps> = ({ defaultStatus }) => {
         aria-checked={isActivate}
         onClick={() => setActivate(!isActivate)}
         tabIndex={0}
-        className={`relative z-0 w-[40px] h-[20px] flex border-[0.59px] rounded-[29.5px] shadow-[inset_0_0_5px_0_#afc6bd] border-solid border-light-green ${isActivate ? 'justify-end bg-green' : 'justify-start'}`}
+        className={`relative z-0 w-[40px] h-[20px] flex border-[0.59px] rounded-[29.5px] shadow-[inset_0_0_5px_0_#afc6bd] border-solid border-light-green cursor-pointer ${isActivate ? 'justify-end bg-green' : 'justify-start'}`}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
