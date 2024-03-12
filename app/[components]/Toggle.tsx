@@ -1,14 +1,17 @@
 'use client'
 import React, { useState } from 'react'
 import { Label } from './Label'
+import { useProducts } from '../[hooks]/useProducts'
 
 interface ToggleProps {
-  defaultStatus: boolean
+  productType: 'carbon' | 'plastic bottles' | 'trees'
 }
 
-export const Toggle: React.FC<ToggleProps> = ({ defaultStatus }) => {
-  const [isActivate, setActivate] = useState(defaultStatus)
+export const Toggle: React.FC<ToggleProps> = ({ productType }) => {
   const [isHover, setHover] = useState(false)
+  const { selectedProduct, setSelectedProduct, setProductData, productData } =
+    useProducts()
+  const isActivate = selectedProduct === productType
   return (
     <div className="flex justify-between items-center relative text-green font-[400] text-[14px] w-full">
       <Label htmlFor="activate-badge" label="Activate badge" />
@@ -16,7 +19,21 @@ export const Toggle: React.FC<ToggleProps> = ({ defaultStatus }) => {
         id="activate-badge"
         role="checkbox"
         aria-checked={isActivate}
-        onClick={() => setActivate(!isActivate)}
+        onClick={() => {
+          if (selectedProduct && selectedProduct === productType) {
+            setSelectedProduct(undefined)
+          } else {
+            setSelectedProduct(productType)
+          }
+          setProductData(
+            productData.map((product) => {
+              return {
+                ...product,
+                active: isActivate,
+              }
+            }),
+          )
+        }}
         tabIndex={0}
         className={`relative z-0 w-[40px] h-[20px] flex border-[0.59px] rounded-[29.5px] shadow-[inset_0_0_5px_0_#afc6bd] border-solid border-light-green cursor-pointer ${isActivate ? 'justify-end bg-green' : 'justify-start'}`}
         onMouseEnter={() => setHover(true)}

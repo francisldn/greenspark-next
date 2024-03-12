@@ -2,20 +2,20 @@ import React from 'react'
 import Image from 'next/image'
 import subtract from '../../public/subtract.svg'
 import subtract_dark from '../../public/subtract_dark.svg'
+import { headerColor } from '../[utils]/WidgetHeader'
 
 interface WidgetHeaderProps {
   title: string
   subtitle: string
   bgColor: string
-  textColor: string
 }
 
 export const WidgetHeader: React.FC<WidgetHeaderProps> = ({
   title,
   subtitle,
   bgColor,
-  textColor,
 }) => {
+  const textColor = headerColor[bgColor as keyof typeof headerColor]
   return (
     <div
       className={`${bgColor} ${textColor} flex flex-1 justify-start items-center gap-[12px] lg:gap-[10%] rounded-[5.95px] px-[5%] py-[12.65px] w-full`}

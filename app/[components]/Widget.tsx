@@ -1,40 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { WidgetHeader } from './WidgetHeader'
 import { Checkbox } from './Checkbox'
 import { BadgeList } from './BadgeList'
 import { Toggle } from './Toggle'
+import { ProductDataType } from '../[types]/ProductData'
+import { BadgeColor } from '../[utils]/BadgeColor'
 
 interface WidgetProps {
   title: string
   subtitle: string
-  bgColor: string
   isLinkToProfile: boolean
   badgeColor: string
-  isActivate: boolean
-  textColor: string
+  productType: ProductDataType['type']
 }
 
 export const Widget: React.FC<WidgetProps> = ({
   title,
   subtitle,
-  bgColor,
-  textColor,
   isLinkToProfile,
   badgeColor,
-  isActivate,
+  productType,
 }) => {
   return (
     <div className="sm:min-w-[250px] max-w-[400px] w-full flex flex-col flex-1">
-      <WidgetHeader
-        title={title}
-        subtitle={subtitle}
-        bgColor={bgColor}
-        textColor={textColor}
-      />
+      <WidgetHeader title={title} subtitle={subtitle} bgColor={badgeColor} />
       <div className="flex flex-col gap-[10px] mt-[13.5px] w-full flex-1">
-        <Checkbox defaultStatus={isLinkToProfile} />
-        <BadgeList defaultColor={badgeColor} />
-        <Toggle defaultStatus={isActivate} />
+        <Checkbox productType={productType} />
+        <BadgeList productType={productType} />
+        <Toggle productType={productType} />
       </div>
     </div>
   )

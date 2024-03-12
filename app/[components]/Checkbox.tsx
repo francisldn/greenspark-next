@@ -1,14 +1,18 @@
 'use client'
 import React, { useState } from 'react'
 import { Label } from './Label'
+import { useProducts } from '../[hooks]/useProducts'
 
 interface CheckboxProps {
-  defaultStatus: boolean
+  productType: 'carbon' | 'plastic bottles' | 'trees'
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({ defaultStatus }) => {
-  const [isLinkToProfile, setLinkToProfile] = useState(defaultStatus)
+export const Checkbox: React.FC<CheckboxProps> = ({ productType }) => {
+  const { productData, setProductData } = useProducts()
   const [isHover, setHover] = useState(false)
+  const isLinkToProfile = productData.find(
+    (product) => product.type === productType,
+  )?.linked
   return (
     <div className="flex justify-between relative text-green font-[400] text-[14px] w-full">
       <Label
@@ -29,7 +33,19 @@ export const Checkbox: React.FC<CheckboxProps> = ({ defaultStatus }) => {
         role="checkbox"
         aria-checked={isLinkToProfile}
         tabIndex={0}
-        onClick={() => setLinkToProfile(!isLinkToProfile)}
+        onClick={() => {
+          setProductData(
+            productData.map((product) => {
+              if (product.type === productType) {
+                return {
+                  ...product,
+                  linked: !product.linked,
+                }
+              }
+              return product
+            }),
+          )
+        }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         className={`absolute right-0 top-2 z-10 w-[18px] h-[18px] flex justify-center items-center border-solid border-[2px] border-black cursor-pointer  ${isLinkToProfile ? 'bg-green border-green border-solid border-[2px] text-white' : ''} hover:border-green rounded-sm`}
