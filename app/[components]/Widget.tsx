@@ -4,12 +4,10 @@ import { Checkbox } from './Checkbox'
 import { BadgeList } from './BadgeList'
 import { Toggle } from './Toggle'
 import { ProductDataType } from '../[types]/ProductData'
-import { BadgeColor } from '../[utils]/BadgeColor'
 
 interface WidgetProps {
   title: string
   subtitle: string
-  isLinkToProfile: boolean
   badgeColor: string
   productType: ProductDataType['type']
 }
@@ -17,7 +15,6 @@ interface WidgetProps {
 export const Widget: React.FC<WidgetProps> = ({
   title,
   subtitle,
-  isLinkToProfile,
   badgeColor,
   productType,
 }) => {
