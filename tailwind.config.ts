@@ -17,7 +17,7 @@ const config: Config = {
         'dark-blue': '#2E3A8C',
         green: '#3B755F',
         'light-green': '#AFC6BD',
-        yellow: '#F2EBDB',
+        beige: '#F2EBDB',
         'light-yellow': '#F9F9F9',
         divider: '#B0B0B0',
         'black-1': '#212121',

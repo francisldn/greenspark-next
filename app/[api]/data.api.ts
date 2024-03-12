@@ -1,16 +1,8 @@
+import { ProductDataType } from '../[types]/ProductData'
+
 const API_URL = 'https://api.mocki.io/v2/016d11e8/product-widgets'
 
-interface ProductData {
-  id: string
-  type: string
-  amount: number
-  action: string
-  active: boolean
-  linked: boolean
-  selectedColor: string
-}
-
-export const getData = async (): Promise<ProductData[] | undefined> => {
+export const getData = async (): Promise<ProductDataType[] | undefined> => {
   try {
     const response = await fetch(API_URL)
     const data = await response.json()
