@@ -24,7 +24,7 @@ export const Widget: React.FC<WidgetProps> = ({
   isActivate,
 }) => {
   return (
-    <div className="sm:min-w-[250px] max-w-[250px] sm:max-w-[400px] w-full flex flex-col flex-1">
+    <div className="sm:min-w-[250px] max-w-[400px] w-full flex flex-col flex-1">
       <WidgetHeader
         title={title}
         subtitle={subtitle}
