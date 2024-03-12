@@ -19,7 +19,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ defaultStatus }) => {
       />
 
       <div
-        className={`flex w-[36px] h-[36px] rounded-full ${isHover ? 'bg-light-green opacity-50' : ''} -mr-2 z-0`}
+        className={`flex w-[36px] h-[36px] rounded-full ${isHover ? 'bg-light-green opacity-50' : ''} -mr-[9px] -mt-[1px] z-0`}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       />
@@ -32,7 +32,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ defaultStatus }) => {
         onClick={() => setLinkToProfile(!isLinkToProfile)}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        className={`absolute right-0 top-3 z-10 w-[18px] h-[18px] flex justify-center items-center border-solid border-[2px] border-black  ${isLinkToProfile ? 'bg-green border-green border-solid border-[2px] text-white' : ''} hover:border-green rounded-sm`}
+        className={`absolute right-0 top-2 z-10 w-[18px] h-[18px] flex justify-center items-center border-solid border-[2px] border-black  ${isLinkToProfile ? 'bg-green border-green border-solid border-[2px] text-white' : ''} hover:border-green rounded-sm`}
       >
         {isLinkToProfile ? (
           <svg
@@ -40,7 +40,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ defaultStatus }) => {
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            stroke-width={4}
+            strokeWidth={4}
             width={16}
             height={16}
           >
