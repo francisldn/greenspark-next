@@ -3,7 +3,7 @@
 ## How to start the app
 
 ```sh
-cd greenspark-vue
+cd greenspark-next
 pnpm install
 ```
 
