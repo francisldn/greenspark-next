@@ -36,4 +36,4 @@ pnpm test:unit
 https://api.mocki.io/v2/016d11e8/product-widgets
 
 ## Deployed front-end
-https://greenspark-vue.vercel.app/
+https://greenspark-next-swart.vercel.app
