@@ -16,7 +16,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ productType }) => {
   return (
     <div className="flex justify-between relative text-green font-[400] text-[14px] w-full">
       <Label
-        htmlFor="public-profile"
+        htmlFor={`public-profile-${productType}`}
         label="Link to Public Profile"
         enableTooltip={true}
         tooltipText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -28,7 +28,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({ productType }) => {
         onMouseLeave={() => setHover(false)}
       />
       <div
-        id="public-profile"
+        id={`public-profile-${productType}`}
+        aria-label={`checkbox-link-to-public-profile-${productType}`}
         aria-describedby="link-to-public-profile"
         role="checkbox"
         aria-checked={isLinkToProfile}

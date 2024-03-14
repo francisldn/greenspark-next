@@ -14,11 +14,15 @@ export const BadgeList: React.FC<BadgeListProps> = ({ productType }) => {
     useProducts()
   return (
     <div className="flex justify-between items-center relative text-green font-[400] text-[14px] w-full">
-      <Label htmlFor="select-badge-color" label="Badge colour" />
+      <Label
+        htmlFor={`select-badge-color-${productType}`}
+        label="Badge colour"
+      />
       <div
         role="listbox"
         className="flex gap-[4px]"
-        aria-labelledby="select-badge-color"
+        aria-label={`select-badge-color-${productType}`}
+        aria-labelledby={`select-badge-color-${productType}`}
         tabIndex={0}
       >
         {Object.values(BadgeColor).map((color) => (
@@ -46,6 +50,7 @@ export const BadgeList: React.FC<BadgeListProps> = ({ productType }) => {
             }}
             role="option"
             aria-selected={badgeColor?.[productType] === color}
+            aria-label={`select-${color}`}
           />
         ))}
       </div>

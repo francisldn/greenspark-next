@@ -14,10 +14,11 @@ export const Toggle: React.FC<ToggleProps> = ({ productType }) => {
   const isActivate = selectedProduct === productType
   return (
     <div className="flex justify-between items-center relative text-green font-[400] text-[14px] w-full">
-      <Label htmlFor="activate-badge" label="Activate badge" />
+      <Label htmlFor={`activate-badge-${productType}`} label="Activate badge" />
       <div
-        id="activate-badge"
+        id={`activate-badge-${productType}`}
         role="checkbox"
+        aria-label={`checkbox-activate-badge-${productType}`}
         aria-checked={isActivate}
         onClick={() => {
           if (selectedProduct && selectedProduct === productType) {
